@@ -1,15 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+//        List<String> list = new ArrayList<>();
+//        list.add("Tamasha");
+//        list.add("Teatr");
+//        list.add("Sinema");
+//        list.add("Film");
+//       List<String> sozler= list.stream().map(word->new StringBuilder(word).reverse().toString()).toList();
+//        System.out.println(sozler);
+//        1.
+        Film film = new Film("BoyukDayaq", "dram",1979);
+        Film film2 = new Film("OgeyAna", "dram",1979);
+        Film film3 = new Film("CebishMuellim", "dram",1979);
+        Film film4 = new Film("Ehmed", "comedi",1965);
+
+        FilmCollection filmCollection=new FilmCollection();
+        filmCollection.addFilm(film);
+        filmCollection.addFilm(film2);
+        filmCollection.addFilm(film3);
+        filmCollection.addFilm(film4);
+        System.out.println(filmCollection.janraGoreFilm("dram"));
+        filmCollection.delete(film2);;
+        System.out.println(filmCollection.janraGoreFilm("dram"));
+        System.out.println(filmCollection.getAll());
         }
     }
-}
